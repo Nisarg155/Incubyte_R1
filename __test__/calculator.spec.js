@@ -17,3 +17,9 @@ describe('Basic Test', () => {
         expect(calc.add('1,2')).toBe(3)
     })
 })
+
+
+test('Test for Unknown amount of Numbers' ,() => {
+    const calc = new StringCalculator()
+    expect(calc.add('1,2,3')).toBe(6)
+})
