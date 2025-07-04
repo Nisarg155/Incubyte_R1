@@ -1,3 +1,6 @@
+const { StringCalculator } = require("../src/calculator.js");
+
+
 describe('Basic Test', () => {
     test('test-1 : return 0 for empty string', () => {
         const calc = new StringCalculator()
@@ -11,6 +14,6 @@ describe('Basic Test', () => {
 
     test('test-3 : return sum of two numbers',() => {
         const calc = new StringCalculator()
-        expect(calc.add('1,2').toBe(3))
+        expect(calc.add('1,2')).toBe(3)
     })
 })
