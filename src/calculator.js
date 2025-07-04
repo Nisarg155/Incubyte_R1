@@ -1,14 +1,20 @@
 class StringCalculator{
     add(numbers)
     {
+
         if(numbers === "")
             return 0;
 
         if(!numbers.includes(','))
-            return parseInt(numbers);
+            return parseInt(numbers)
 
-        let [num1,num2] = numbers.split(',')
-        return parseInt(num1)+parseInt(num2)
+        let nums = numbers.split(',')
+        let sum = 0
+        nums.forEach((num) => {
+            sum += parseInt(num)
+        } )
+
+        return sum
 
     }
 }
