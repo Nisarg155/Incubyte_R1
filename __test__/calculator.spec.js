@@ -19,18 +19,23 @@ describe('Basic Test', () => {
 })
 
 
-test('Test for Unknown amount of Numbers' ,() => {
+test('Task 2 :- Test for Unknown amount of Numbers' ,() => {
     const calc = new StringCalculator()
     expect(calc.Add('1,2,3')).toBe(6)
 })
 
-test('Test for NewLine Between Numbers',() => {
+test('Task 3 :- Test for NewLine Between Numbers',() => {
     const calc = new StringCalculator()
     expect(calc.Add('1\n2,3')).toBe(6)
 })
 
-test('Test for Support different Deliminators',() => {
+test('Task 4 :- Test for Support different Deliminators',() => {
     const calc = new StringCalculator()
     expect(calc.Add('//;\n1;2')).toBe(3)
+})
+
+test('Task 5 :- negative numbers not allowed',() => {
+    const calc = new StringCalculator()
+    expect(calc.Add('1,-1,2')).toThrow("negatives not allowed : -1")
 })
 
