@@ -34,8 +34,8 @@ test('Task 4 :- Test for Support different Deliminators',() => {
     expect(calc.Add('//;\n1;2')).toBe(3)
 })
 
-test('Task 5 :- negative numbers not allowed',() => {
-    const calc = new StringCalculator()
-    expect(calc.Add('1,-1,2')).toThrow("negatives not allowed : -1")
-})
+test('Task 5 :- negative numbers not allowed', () => {
+    const calc = new StringCalculator();
+    expect(() => calc.Add("-1")).toThrow("negatives not allowed : -1");
+});
 
