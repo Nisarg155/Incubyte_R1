@@ -11,7 +11,12 @@ class StringCalculator{
         let nums = numbers.split(',')
         let sum = 0
         nums.forEach((num) => {
+            if(num.length === 1)
             sum += parseInt(num)
+            else{
+                let [num1,num2] = num.split('\n')
+                sum += parseInt(num1) + parseInt(num2)
+            }
         } )
 
         return sum
