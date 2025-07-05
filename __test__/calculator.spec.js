@@ -29,3 +29,8 @@ test('Test for NewLine Between Numbers',() => {
     expect(calc.Add('1\n2,3')).toBe(6)
 })
 
+test('Test for Support different Deliminators',() => {
+    const calc = new StringCalculator()
+    expect(calc.Add('//;\\n1;2')).toBe(3)
+})
+
