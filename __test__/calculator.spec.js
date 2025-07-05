@@ -44,3 +44,7 @@ test('Task - 6 :- multiple negative numbers , print them all', () => {
     expect(() => calc.Add("-1,-2,-3")).toThrow("negatives not allowed : -1,-2,-3");
 });
 
+test('Task - 9 :- number greater than 1000 should be ignored',() => {
+    const calc = new StringCalculator()
+    expect(calc.Add('1000,1,2,1001')).toBe(1003)
+})
