@@ -39,3 +39,7 @@ test('Task 5 :- negative numbers not allowed', () => {
     expect(() => calc.Add("-1")).toThrow("negatives not allowed : -1");
 });
 
+test('Task - 6 :- multiple negative numbers , print them all ' ,() =>{
+    const calc = new StringCalculator()
+    expect(calc.Add('1,-1,-2,-3')).toThrow("negative not allowed : -1,-2,-3")
+})
