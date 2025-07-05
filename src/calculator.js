@@ -1,26 +1,21 @@
 class StringCalculator {
     Add(numbers) {
-
         if (numbers === "")
             return 0;
 
-        if (!numbers.includes(','))
-            return parseInt(numbers)
+        let delimiter = ',';
 
-
-        let nums = numbers.split(',')
+        if (numbers.substring(0, 2) === "//") {
+            delimiter = numbers[2];
+            numbers = numbers.substring(4);
+        }
+        numbers = numbers.replace(/\n/g, delimiter);
+        let nums = numbers.split(delimiter);
 
         return nums.reduce((sum, num) => {
-            if (num.length === 1) {
-                sum += parseInt(num)
-            } else {
-                let [num1, num2] = num.split('\n')
-                sum += parseInt(num1) + parseInt(num2)
-            }
-            return sum
-        }, 0)
-
+            return sum + parseInt(num);
+        }, 0);
     }
 }
 
-module.exports = {StringCalculator}
+module.exports = { StringCalculator };
